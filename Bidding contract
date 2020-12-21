@@ -1,0 +1,275 @@
+SupplyChain[Bidding] 
+
+ 
+
+
+
+methods 
+-------
+
+Authorize 
+
+BidValueDecreased 
+
+BiddingResult 
+
+Failure 
+
+ContractClose 
+
+Bidding 
+
+Bid 
+
+Withdraw 
+
+BiddingClose 
+
+Getbalance 
+
+OwnerOnly 
+
+GetTrackingContractAddress 
+
+requiredStakeholder 
+
+ 
+
+ 
+
+WMC/DIT/CBO/McC/ 
+
+Have been get automatically (Solmet) 
+------------------------------------
+
+ 
+
+NOC 
+
+NOC=0 
+
+Check existence of inheritance architecture of the contract-based application() 
+
+--> No inheritance architecture 
+
+ 
+
+ 
+
+RFC 
+
+RFC=18  ( in case we do not consider modifier as potential method for call  -->16) 
+
+Identify all the method of the class(not include inherited method)) 
+
+-->9     (in case we do not consider modifier as potential method for call  -->7) 
+
+Identify all the distinct methods call by each method identify above 
+
+-->9 
+
+ 
+
+ 
+
+LCOM metric calculation 
+
+LCOM= 0,  |p|=6 < |q|=15 
+
+ 
+
+Authorize/ Bidding ->NO 
+
+Authorize/ Bid  ->YES 
+
+Authorize/ Withdraw ->NO 
+
+Authorize/ BiddingClose ->NO 
+
+Authorize/ Getbalance  -> NO 
+
+Authorize/ GetTrackingContractAddress ->YES 
+
+ 
+
+ 
+
+Bidding/ Bid->YES 
+
+Bidding/ Withdraw->YES 
+
+Bidding/ BiddingClose->YES 
+
+Bidding/ Getbalance->YES 
+
+Bidding/ GetTrackingContractAddress->YES 
+
+ 
+
+ 
+
+Bid/ Withdraw->YES 
+
+Bid/ BiddingClose->YES 
+
+Bid/ Getbalance->NO 
+
+Bid/ GetTrackingContractAddress->YES 
+
+ 
+
+ 
+
+Withdraw/ BiddingClose->YES 
+
+Withdraw/ Getbalance->NO 
+
+Withdraw/ GetTrackingContractAddress->YES 
+
+ 
+
+ 
+
+BiddingClose/ Getbalance->YES 
+
+BiddingClose/ GetTrackingContractAddress-YES 
+
+ 
+
+ 
+
+Getbalance/ GetTrackingContractAddress-YES 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Stall Ratio 
+
+SR =0. 
+
+Focused on the loop statement 
+
+Focused on the loop statement 
+
+  none loop statement: 
+
+Analyse both loop: 
+
+”” 
+
+ 
+
+ 
+
+CPP 
+
+CPP=0 
+
+Identify on the contract all the method with parameter 
+
+-> authorize/ Bidding/ bid /getTrackingContractAddress 
+
+Identify all child methods with parameter based on the parameter from method identify above 
+
+-> none  
+
+CER 
+
+CER=14/18= 0.7777777777777778 
+
+Identify all data element might be critical for the contract: 
+
+Criteria of criticality :   
+
+1 non primitive type (int/uint....unless this element with this type migth really impact  an important decision in the program) ---> none 
+
+2-dataelement with complex structure that may be is assigned value or part of decision --->14 
+
+[uint public contractbalance/  address public owner/ uint public winningBid/ uint public biddingclosetime/  uint public minumumParticipationFee/ u/nt public reputationfactor/ address public winningBidder/  address public wholeseller/ mapping(address => uint) returnsPending/ bool public biddingComplete/ bool authorized/   struct Carrier/ mapping(address => Carrier) public carriers/ MyDefaulfTrackingContract public  myTackingContract/ 
+
+/Total number of elements in the contract 
+
+--> 18  
+
+ 
+
+ 
+
+Nex 
+
+Nex=13 
+
+Identify exception handling statement in the program (try catch/require/assert) 
+
+->13 
+
+ 
+
+ 
+
+Noex 
+
+Noex=5 
+
+Identify the possible statement able to lead to exception and check if that exception handling statement are been define for them.  
+
+--> carriers[party].authorized = true;/ owner = _beneficiary;    / if(now>biddingclosetime || biddingComplete == true){   / returnsPending[msg.sender] = 0;/ msg.sender.transfer(contractbalance);        
+
+--->5 
+
+ 
+
+ 
+
+Roex 
+
+Roex= 0.2777777777777778; Nex=13 , Noex=5 and  Noex+Nex=18 
+
+ 
+
+Halsted volume 
+
+Volume: V=N*logs n= 1862.29 
+
+Identify all following values: 
+
+n1= the number of distinct operators  
+
+n2= the number of distinct operands  
+
+N1= the total number of operators 
+
+N2= the total number of operands- 
+
+N=N1+N2 
+
+N=n1+n2 
+
+Link: https://studentmailuwsac-my.sharepoint.com/:x:/r/personal/abouaangekevin_n'da_uws_ac_uk/_layouts/15/Doc.aspx?sourcedoc=%7B822E9CBA-ADAD-4DAC-BCFD-68348E238AE6%7D&file=Result_for_RQ2_of_metric_study.xlsx&action=default&mobileredirect=true 
+
+(HM calculus tab) 
+
+ 
+
+NCBC 
+
+NCBC= 0.7222222222222222 
+
+Identify all exception handling statement in the contract 
+
+->13 
+
+Number of possible exception handling statement 
+
+->18 
+
+ 
+
+ 
