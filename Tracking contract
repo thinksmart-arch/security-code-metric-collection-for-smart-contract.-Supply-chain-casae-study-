@@ -1,0 +1,295 @@
+SupplyChain[Tracking] 
+
+ 
+
+
+methods
+-------
+
+
+Constructor 
+
+SendToken 
+
+GetBalance 
+
+SetContractParameters 
+
+DeliveredProducts 
+
+ReceivedProducts 
+
+DeleteDelivery 
+
+CheckDelivery 
+
+OnlyAdmin 
+
+initializeWholeSellerToken 
+
+ 
+
+ 
+
+ 
+
+WMC/DIT/CBO/McC/ 
+
+Have been get automatically (Solmet) 
+
+------------------------------------ 
+
+
+
+
+NOC 
+
+NOC=0 
+
+Check existence of inheritance architecture of the contract-based application() 
+
+--> No inheritance architecture 
+
+ 
+
+ 
+
+RFC 
+
+RFC=23   
+
+Identify all the method of the class(not include inherited method)) 
+
+-->10     
+
+Identify all the distinct methods call by each method identify above 
+
+-->13 
+
+ 
+
+ 
+
+LCOM metric calculation 
+
+LCOM= 0,  |p|=15 < |q|=21 
+
+ 
+
+Constructor/ SendToken -->YES 
+
+Constructor/ GetBalance-->YES 
+
+Constructor/ SetContractParameters-->YES 
+
+Constructor/ DeliveredProducts-->NO 
+
+Constructor/ ReceivedProducts->YES 
+
+Constructor/ DeleteDelivery->YES 
+
+Constructor/ CheckDelivery-->NO 
+
+Constructor/ initializeWholeSellerToken->YES 
+
+ 
+
+ 
+
+SendToken / GetBalance-->YES 
+
+SendToken / SetContractParameters->NO 
+
+SendToken / DeliveredProducts->NO 
+
+SendToken / ReceivedProducts->NO 
+
+SendToken / DeleteDelivery->NO 
+
+SendToken / CheckDelivery->NO 
+
+SendToken / initializeWholeSellerToken->YES 
+
+ 
+
+GetBalance / SetContractParameters->NO 
+
+GetBalance / DeliveredProducts->NO 
+
+GetBalance / ReceivedProducts->NO 
+
+GetBalance / DeleteDelivery->NO 
+
+GetBalance / CheckDelivery->NO 
+
+GetBalance / initializeWholeSellerToken->YES 
+
+ 
+
+SetContractParameters / DeliveredProducts-YES 
+
+SetContractParameters / ReceivedProducts->YES 
+
+SetContractParameters / DeleteDelivery->YES 
+
+SetContractParameters / CheckDelivery-->NO 
+
+SetContractParameters / initializeWholeSellerToken-->YES 
+
+ 
+
+DeliveredProducts / ReceivedProducts-->YES 
+
+DeliveredProducts / DeleteDelivery-->YES 
+
+DeliveredProducts / CheckDelivery-->YES 
+
+DeliveredProducts / initializeWholeSellerToken-->YES 
+
+ 
+
+ReceivedProducts / DeleteDelivery-->YES 
+
+ReceivedProducts / CheckDelivery-->YES 
+
+ReceivedProducts / initializeWholeSellerToken-->YES 
+
+ 
+
+ 
+
+DeleteDelivery / CheckDelivery-->YES 
+
+DeleteDelivery / initializeWholeSellerToken-->NO 
+
+ 
+
+CheckDelivery/ initializeWholeSellerToken-->NO 
+
+ 
+
+ 
+
+Stall Ratio 
+
+SR =0. 
+
+Focused on the loop statement 
+
+  none loop statement:  
+
+Analyse both loop: 
+
+“” 
+
+ 
+
+CPP 
+
+CPP=6 
+
+Identify on the contract all the method with parameter 
+
+-> constructor/ sendToken/ getBalance/ setContractParameters/ deliveredProducts/ receivedProducts/ deleteDelivery/ checkDelivery/ initializeWholeSellerToken 
+
+Identify all child methods with parameter based on the parameter from method identify above 
+
+-> 6  
+
+CER 
+
+CER=9/10=0.9 
+
+Identify all dataelement might be critical for the contract: 
+
+Criteria of criticality :   
+
+1 non primitive type (int/uint....unless this element with this type migth really impact  an important decision in the program) ---> none 
+
+2-dataelement with complex structure that may be is assigned value or part of decision --->9 
+
+Total number of element in the contract 
+
+--> 10 
+
+  
+
+ 
+
+ 
+
+Nex 
+
+Nex=14 
+
+Identify exception handling statement in the program (try catch/require/assert) 
+
+->14 
+
+ 
+
+ 
+
+Noex 
+
+Noex=8 
+
+Identify the possible statement able to lead to exception and check if that exception handling statement are been define for them.  
+
+--> return (deliveries[trackingNo].item, deliveries[trackingNo].quantity, deliveries[trackingNo].locationData, deliveries[trackingNo].timeStamp, deliveries[trackingNo].sender);/   delete deliveries[trackingNo];/ if (block.timestamp <= deliveries[trackingNo].timeStamp + contractLeadTime && _locationData[0] == contractLocation[0] && _locationData[1] == contractLocation[1]) {/ if (keccak256(bytes  (deliveries[trackingNo].item)) == keccak256(bytes (_item)) && deliveries[trackingNo].quantity ==_quantity)/ deliveries[trackingNo].item = _item; / return balances[_account];/ balances[_to] += _amount;/ if (balances[_from] < _amount) { / biddingcontract=MyDefaultBiddingContract(_biddingcontract);  
+
+--->8 
+
+ 
+
+ 
+
+Roex 
+
+Roex= 0.3636363636363636; Nex=14 , Noex=8 and  Noex+Nex=22 
+
+ 
+
+ 
+
+Halsted volume 
+
+Volume: V=N*logs n= 1862.29 
+
+Identify all following values: 
+
+n1= the number of distinct operators  
+
+n2= the number of distinct operands  
+
+N1= the total number of operators 
+
+N2= the total number of operands- 
+
+N=N1+N2 
+
+N=n1+n2 
+
+Link: https://studentmailuwsac-my.sharepoint.com/:x:/r/personal/abouaangekevin_n'da_uws_ac_uk/_layouts/15/Doc.aspx?sourcedoc=%7B822E9CBA-ADAD-4DAC-BCFD-68348E238AE6%7D&file=Result_for_RQ2_of_metric_study.xlsx&action=default&mobileredirect=true 
+
+(HM calculus tab) 
+
+ 
+
+NCBC 
+
+NCBC= 0.6363636363636364 
+
+Identify all exception handling statement in the contract 
+
+->14 
+
+Number of possible exception handling statement 
+
+->22 
+
+ 
+
+ 
+
+ 
